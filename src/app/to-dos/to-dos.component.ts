@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToDo } from '../to-do';
 
 @Component({
   selector: 'app-to-dos',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-dos.component.css']
 })
 export class ToDosComponent implements OnInit {
+  toDo: ToDo = {
+    id: 1,
+    name: 'React Hooks'
+  };
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
