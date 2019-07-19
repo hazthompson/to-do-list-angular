@@ -16,7 +16,7 @@ export class ToDosComponent implements OnInit {
   }
 
   getTodos(): void {
-    this.todos = this.todoService.getTodos();
+    this.todoService.getTodos().subscribe(todos => (this.todos = todos));
   }
 
   constructor(private todoService: TodoService) {}
