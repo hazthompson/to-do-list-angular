@@ -1,6 +1,6 @@
 # ToDoList
 
-This project is a simple do list built in Angular
+This project is a simple do list built in Angular. This is built for learning purposes and uses Angular routing 
 
 
 
