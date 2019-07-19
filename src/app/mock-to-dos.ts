@@ -6,5 +6,5 @@ export const TODOS: ToDo[] = [
   { id: 13, name: 'Flutter' },
   { id: 14, name: 'PHP' },
   { id: 15, name: 'Vive' },
-  { id: 15, name: 'PWAs' }
+  { id: 16, name: 'PWAs' }
 ];

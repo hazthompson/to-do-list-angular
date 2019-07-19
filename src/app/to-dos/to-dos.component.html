@@ -3,7 +3,12 @@
   <h2>Technologies/Frameworks to Explore Next:</h2>
   <br />
   <ul class="todos">
-    <li *ngFor="let todo of todos" (click)="onSelect(todo)" class="row">
+    <li
+      *ngFor="let todo of todos"
+      [class.selected]="todo === selectedTodo"
+      (click)="onSelect(todo)"
+      class="row"
+    >
       <span class="badge" style="text-align:center;">{{ todo.id }}</span>
       <span class="display-name" style="text-align:center;">{{
         todo.name
