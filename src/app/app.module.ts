@@ -4,10 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToDosComponent } from './to-dos/to-dos.component';
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { FormsModule } from '@angular/forms';
+import { ToDoDetailComponent } from './to-do-detail/to-do-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, ToDosComponent],
+  declarations: [AppComponent, ToDosComponent, ToDoDetailComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
