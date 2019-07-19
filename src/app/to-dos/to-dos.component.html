@@ -16,13 +16,4 @@
     </li>
   </ul>
 </div>
-<div *ngIf="selectedTodo">
-  <h2>{{ selectedTodo.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{ selectedTodo.id }}</div>
-  <div>
-    <label
-      >name:
-      <input [(ngModel)]="selectedTodo.name" placeholder="name" />
-    </label>
-  </div>
-</div>
+<app-to-do-detail [todo]="selectedTodo"></app-to-do-detail>

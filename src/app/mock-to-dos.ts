@@ -1,4 +1,4 @@
-import { ToDo } from '../to-do';
+import { ToDo } from './to-do';
 
 export const TODOS: ToDo[] = [
   { id: 11, name: 'TypeScript' },

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ToDo } from '../to-do';
 
 @Component({
   selector: 'app-to-do-detail',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-do-detail.component.css']
 })
 export class ToDoDetailComponent implements OnInit {
+  @Input() todo: ToDo;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
