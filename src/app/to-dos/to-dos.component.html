@@ -1,8 +1,11 @@
 <div>
   <h2>List of Technologies to explore next:</h2>
   <ul class="todos">
-    <li *ngFor="let todo of todos">
-      <span class="badge">{{ todo.id }}</span> {{ todo.name }}
+    <li *ngFor="let todo of todos" class="row">
+      <span class="badge">{{ todo.id }}</span>
+      <span class="display-name" style="text-align:center;">{{
+        todo.name
+      }}</span>
     </li>
   </ul>
 </div>
