@@ -9,10 +9,11 @@ import { TODOS } from '../mock-to-dos';
 })
 export class ToDosComponent implements OnInit {
   todos = TODOS;
-  toDo: ToDo = {
-    id: 1,
-    name: 'React Hooks'
-  };
+
+  selectedTodo: ToDo;
+  onSelect(todo: ToDo): void {
+    this.selectedTodo = todo;
+  }
 
   constructor() {}
 
