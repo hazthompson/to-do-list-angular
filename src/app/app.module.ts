@@ -7,9 +7,10 @@ import { ToDosComponent } from './to-dos/to-dos.component';
 import { FormsModule } from '@angular/forms';
 import { ToDoDetailComponent } from './to-do-detail/to-do-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, ToDosComponent, ToDoDetailComponent, MessagesComponent],
+  declarations: [AppComponent, ToDosComponent, ToDoDetailComponent, MessagesComponent, DashboardComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
-  <h1>To do List:</h1>
-  <app-to-dos></app-to-dos>
+  <h1>New Technologies/frameworks to Explore</h1>
+  <nav>
+    <a routerLink="/dashboard">Currently working on </a>
+    <a routerLink="/todos">Full list</a>
+  </nav>
+  <router-outlet></router-outlet>
+  <!-- <app-to-dos></app-to-dos> -->
   <app-messages></app-messages>
 </div>
-
-<router-outlet></router-outlet>
