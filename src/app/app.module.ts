@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { TodoSearchComponent } from './todo-search/todo-search.component';
 
 // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
 // and returns simulated server responses.
@@ -22,7 +23,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     ToDosComponent,
     ToDoDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    TodoSearchComponent
   ],
   imports: [
     BrowserModule,

@@ -81,6 +81,18 @@ export class TodoService {
     );
   }
 
+  /* GET tasks whose name contains search term */
+  searchTodos(term: string): Observable<ToDo[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.get<ToDo[]>(`${this.todosUrl}/?name=${term}`).pipe(
+      tap(_ => this.log(`found tasks matching "${term}"`)),
+      catchError(this.handleError<ToDo[]>('searchTodos', []))
+    );
+  }
+
   constructor(
     private http: HttpClient,
     private messageService: MessageService
