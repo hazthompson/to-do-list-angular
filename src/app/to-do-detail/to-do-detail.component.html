@@ -1,12 +1,15 @@
 <div *ngIf="todo">
-  <h2>{{ todo.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{ todo.id }}</div>
+  <h2>{{ todo.name | uppercase }}</h2>
+  <div>
+    <div>Useful resources: {{ todo.id }}</div>
+    <div>My projects: {{ todo.id }}</div>
+  </div>
   <div>
     <label
-      >name:
-      <input [(ngModel)]="todo.name" placeholder="name" />
+      >Edit:
+      <input nz-input [(ngModel)]="todo.name" placeholder="name" />
     </label>
   </div>
 </div>
 <button nz-button nzType="default" (click)="save()">save</button>
-<button nz-button nzType="default" (click)="goBack()">go back</button>
+<button nz-button nzType="default" (click)="goBack()">back</button>
