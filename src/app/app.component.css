@@ -59,6 +59,11 @@ nz-breadcrumb {
   margin: 16px 0;
 }
 
+nz-breadcrumb-item {
+  margin: 16px 0;
+  cursor: pointer;
+}
+
 nz-content {
   padding: 0 50px;
 }
