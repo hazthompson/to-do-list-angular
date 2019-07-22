@@ -36,6 +36,7 @@ nz-breadcrumb {
 nz-breadcrumb-item {
   margin: 16px 0;
   cursor: pointer;
+  font-family: 'Fjalla One', sans-serif;
 }
 
 nz-content {

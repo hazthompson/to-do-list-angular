@@ -23,6 +23,7 @@ h3 {
 }
 h4 {
   position: relative;
+  font-family: 'Fjalla One', sans-serif;
 }
 .grid {
   margin: 0;
@@ -38,6 +39,7 @@ h4 {
   min-width: 120px;
   background-color: #496b7a;
   border-radius: 2px;
+  margin: 10px auto 70px auto;
 }
 .module:hover {
   background-color: #eee;
