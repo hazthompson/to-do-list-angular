@@ -1,8 +1,10 @@
 <div class="grid grid-pad">
   <a *ngFor="let todo of todos" class="col-1-4">
-    <div class="module todo">
+    <div routerLink="/detail/{{ todo.id }}" class="module todo">
       <h4>{{ todo.name }}</h4>
     </div>
   </a>
 </div>
+<br />
+<br />
 <app-todo-search></app-todo-search>

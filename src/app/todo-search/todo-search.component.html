@@ -1,7 +1,17 @@
 <div id="search-component">
-  <h4><label for="search-box"> Search current list</label></h4>
-
-  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  <nz-input-group [nzSuffix]="suffixIconSearch">
+    <input
+      #searchBox
+      id="search-box"
+      type="text"
+      nz-input
+      placeholder="Search current list"
+      (input)="search(searchBox.value)"
+    />
+  </nz-input-group>
+  <ng-template #suffixIconSearch>
+    <i nz-icon nzType="search"></i>
+  </ng-template>
 
   <ul class="search-result">
     <li *ngFor="let todo of todos$ | async">
