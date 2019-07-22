@@ -17,7 +17,8 @@ const httpOptions = {
 export class TodoService {
   getTodos(): Observable<ToDo[]> {
     // TODO: send the message _after_ fetching the todos
-    this.messageService.add('TodoService: fetched todos');
+    // this.messageService.add('TodoService: fetched todos');
+    console.log('fetched todos');
     return this.http
       .get<ToDo[]>(this.todosUrl)
       .pipe(catchError(this.handleError<ToDo[]>('getTodos', [])));
@@ -27,7 +28,7 @@ export class TodoService {
     // TODO: send the message _after_ fetching the todo
     const url = `${this.todosUrl}/${id}`;
     return this.http.get<ToDo>(url).pipe(
-      tap(_ => this.log(`fetched todo id=${id}`)),
+      tap(_ => console.log(`fetched todo id=${id}`)),
       catchError(this.handleError<ToDo>(`getTodo id=${id}`))
     );
   }
@@ -50,7 +51,7 @@ export class TodoService {
       console.error(error); // log to console instead
 
       // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
+      console.log(`${operation} failed: ${error.message}`);
 
       // Let the app keep running by returning an empty result.
       return of(result as T);
@@ -59,14 +60,14 @@ export class TodoService {
 
   updateTodo(todo: ToDo): Observable<any> {
     return this.http.put(this.todosUrl, todo, httpOptions).pipe(
-      tap(_ => this.log(`updated todo id=${todo.id}`)),
+      tap(_ => console.log(`updated todo id=${todo.id}`)),
       catchError(this.handleError<any>('updateTodo'))
     );
   }
 
   addTodo(todo: ToDo): Observable<ToDo> {
     return this.http.post<ToDo>(this.todosUrl, todo, httpOptions).pipe(
-      tap((newTodo: ToDo) => this.log(`added todo w/ id=${newTodo.id}`)),
+      tap((newTodo: ToDo) => console.log(`added todo w/ id=${newTodo.id}`)),
       catchError(this.handleError<ToDo>('addTodo'))
     );
   }
@@ -76,7 +77,7 @@ export class TodoService {
     const url = `${this.todosUrl}/${id}`;
 
     return this.http.delete<ToDo>(url, httpOptions).pipe(
-      tap(_ => this.log(`deleted todo id=${id}`)),
+      tap(_ => console.log(`deleted todo id=${id}`)),
       catchError(this.handleError<ToDo>('deleteTodo'))
     );
   }
@@ -88,7 +89,7 @@ export class TodoService {
       return of([]);
     }
     return this.http.get<ToDo[]>(`${this.todosUrl}/?name=${term}`).pipe(
-      tap(_ => this.log(`found tasks matching "${term}"`)),
+      tap(_ => console.log(`found tasks matching "${term}"`)),
       catchError(this.handleError<ToDo[]>('searchTodos', []))
     );
   }
