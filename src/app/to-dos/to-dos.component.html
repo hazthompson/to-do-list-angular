@@ -2,7 +2,7 @@
   <ul class="todos">
     <li *ngFor="let todo of todos" class="row">
       <a routerLink="/detail/{{ todo.id }}" class="row">
-        <span class="badge" style="text-align:center;">{{ todo.id }}</span>
+        <!-- <span class="badge" style="text-align:center;">{{ todo.id }}</span> -->
         <span class="display-name" style="text-align:center;">{{
           todo.name
         }}</span>
@@ -14,10 +14,7 @@
   </ul>
 </div>
 <div>
-  <label
-    >Add:
-    <input #todoName />
-  </label>
+  <input #todoName nz-input placeholder="Add new" [(ngModel)]="value" />
   <!-- (click) passes input value to add() and then clears the input -->
   <button (click)="add(todoName.value); todoName.value = ''">
     add
