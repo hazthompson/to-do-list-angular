@@ -8,10 +8,11 @@ a {
 
 /* AppComponent's private CSS styles */
 h1 {
-  font-size: 1.2em;
+  font-size: 2.2em;
   margin-bottom: 0;
   font-family: 'Fjalla One', sans-serif;
   color: white;
+  cursor: pointer;
 }
 h2 {
   font-size: 2em;
@@ -28,7 +29,7 @@ nav a {
 }
 nav a:visited,
 a:link {
-  color: #334953;
+  color: #496b7a;
 }
 nav a:hover {
   color: #039be5;
