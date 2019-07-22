@@ -1,10 +1,15 @@
 <div *ngIf="todo">
   <h2>{{ todo.name | uppercase }}</h2>
   <div>
-    <div>Useful resources: {{ todo.id }}</div>
-    <div>My projects: {{ todo.id }}</div>
+    <div>
+      Useful resources: <a href="{{ todo.link }}">{{ todo.link }}</a>
+    </div>
+    <div>
+      My projects:<a href="{{ todo.projectLink }}"> {{ todo.project }}</a>
+    </div>
   </div>
   <div>
+    <br />
     <label
       >Edit:
       <input nz-input [(ngModel)]="todo.name" placeholder="name" />
