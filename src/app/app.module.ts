@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 import { AppComponent } from './app.component';
 import { ToDosComponent } from './to-dos/to-dos.component';
 import { FormsModule } from '@angular/forms';
@@ -17,6 +19,10 @@ import { TodoSearchComponent } from './todo-search/todo-search.component';
 // and returns simulated server responses.
 // Remove it when a real server is ready to receive requests.
 
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+registerLocaleData(en);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,11 +37,13 @@ import { TodoSearchComponent } from './todo-search/todo-search.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    NgZorroAntdModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false
     })
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
