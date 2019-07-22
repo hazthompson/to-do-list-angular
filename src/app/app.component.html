@@ -2,14 +2,15 @@
 <nz-layout>
   <nz-header>
     <!-- <div class="body logo"> -->
-    <h1>New technologies board</h1>
+    <h1 routerLink="/dashboard">New technologies board</h1>
   </nz-header>
   <nz-content>
     <nz-breadcrumb>
       <nz-breadcrumb-item routerLink="/dashboard">
         Currently working on
       </nz-breadcrumb-item>
-      <nz-breadcrumb-item routerLink="/todos">Full list</nz-breadcrumb-item>
+      <nz-breadcrumb-item routerLink="/todos">To explore</nz-breadcrumb-item>
+      <nz-breadcrumb-item>Have explored</nz-breadcrumb-item>
     </nz-breadcrumb>
     <div class="inner-content">
       <router-outlet></router-outlet>
