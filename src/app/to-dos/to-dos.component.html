@@ -7,6 +7,19 @@
           todo.name
         }}</span>
       </a>
+      <button class="delete" title="delete todo" (click)="delete(todo)">
+        x
+      </button>
     </li>
   </ul>
+</div>
+<div>
+  <label
+    >Add:
+    <input #todoName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(todoName.value); todoName.value = ''">
+    add
+  </button>
 </div>

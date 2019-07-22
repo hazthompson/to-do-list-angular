@@ -7,6 +7,10 @@ import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +24,7 @@ export class TodoService {
   }
 
   getTodo(id: number): Observable<ToDo> {
-    // TODO: send the message _after_ fetching the hero
+    // TODO: send the message _after_ fetching the todo
     const url = `${this.todosUrl}/${id}`;
     return this.http.get<ToDo>(url).pipe(
       tap(_ => this.log(`fetched todo id=${id}`)),
@@ -51,6 +55,30 @@ export class TodoService {
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
+  }
+
+  updateTodo(todo: ToDo): Observable<any> {
+    return this.http.put(this.todosUrl, todo, httpOptions).pipe(
+      tap(_ => this.log(`updated todo id=${todo.id}`)),
+      catchError(this.handleError<any>('updateTodo'))
+    );
+  }
+
+  addTodo(todo: ToDo): Observable<ToDo> {
+    return this.http.post<ToDo>(this.todosUrl, todo, httpOptions).pipe(
+      tap((newTodo: ToDo) => this.log(`added todo w/ id=${newTodo.id}`)),
+      catchError(this.handleError<ToDo>('addTodo'))
+    );
+  }
+
+  deleteTodo(todo: ToDo | number): Observable<ToDo> {
+    const id = typeof todo === 'number' ? todo : todo.id;
+    const url = `${this.todosUrl}/${id}`;
+
+    return this.http.delete<ToDo>(url, httpOptions).pipe(
+      tap(_ => this.log(`deleted todo id=${id}`)),
+      catchError(this.handleError<ToDo>('deleteTodo'))
+    );
   }
 
   constructor(
