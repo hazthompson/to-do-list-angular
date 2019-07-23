@@ -2,10 +2,13 @@
   <h2>{{ todo.name | uppercase }}</h2>
   <div>
     <div>
-      Useful resources: <a href="{{ todo.link }}">{{ todo.link }}</a>
+      Useful resources:
+      <a href="{{ todo.link }}" target="_blank">{{ todo.link }}</a>
     </div>
     <div>
-      My projects:<a href="{{ todo.projectLink }}"> {{ todo.project }}</a>
+      My projects:<a href="{{ todo.projectLink }}" target="_blank">
+        {{ todo.project }}</a
+      >
     </div>
   </div>
   <div>
