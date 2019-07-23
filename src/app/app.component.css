@@ -1,5 +1,6 @@
 .body {
   padding: 20px;
+  background-color: #f0f2f5;
 }
 
 a {
@@ -11,7 +12,7 @@ h1 {
   font-size: 220%;
   margin-bottom: 0;
   font-family: 'Fjalla One', sans-serif;
-  color: white;
+  color: #f49464;
   cursor: pointer;
 }
 h2 {
@@ -25,19 +26,25 @@ h2 {
 }
 
 nz-header {
-  background-color: #334953;
+  background-color: #c2e1de;
+  height: 6em;
 }
 
 nz-breadcrumb {
   margin: 1em;
-
   margin-left: 35%;
+  color: #f49464;
 }
 
 nz-breadcrumb-item {
   margin: 16px 0;
   cursor: pointer;
   font-family: 'Fjalla One', sans-serif;
+  color: #f49464;
+}
+
+.title3 {
+  color: #f49464 !important;
 }
 
 nz-content {
@@ -46,6 +53,7 @@ nz-content {
 
 nz-footer {
   text-align: center;
+  background-color: #f0f2f5;
 }
 
 .inner-content {

@@ -37,7 +37,8 @@ h4 {
   color: #eee;
   max-height: 120px;
   min-width: 120px;
-  background-color: #496b7a;
+  background-color: #008765;
+  background-image: linear-gradient(#ffcf84, #e4892d);
   border-radius: 2px;
   margin: 10px auto 70px auto;
 }
