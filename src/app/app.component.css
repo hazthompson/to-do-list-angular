@@ -29,8 +29,9 @@ nz-header {
 }
 
 nz-breadcrumb {
-  margin: 16px 0;
-  margin-left: 25%;
+  margin: 1em;
+
+  margin-left: 35%;
 }
 
 nz-breadcrumb-item {
